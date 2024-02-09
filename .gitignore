@@ -1,3 +1,3 @@
-db.sqlite3
-.env
-__pycache__
+djChat/db.sqlite3
+djChat/.env
+djChat/djChat/__pycache__
