@@ -15,7 +15,8 @@ class Category(models.Model):
 class Server(models.Model):
     name = models.CharField(max_length=50)
     owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="server_owner"
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, 
+        related_name="server_owner"
     )
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="server_category"
@@ -30,7 +31,8 @@ class Server(models.Model):
 class Channel(models.Model):
     name = models.CharField(max_length=50)
     owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="channel_owner"
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, 
+        related_name="channel_owner"
     )
     topic = models.CharField(max_length=100)
     server = models.ForeignKey(Server, on_delete=models.CASCADE)

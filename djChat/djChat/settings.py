@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "server",
     # External Modules
     "drf_spectacular",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -138,10 +139,11 @@ AUTH_USER_MODEL = "account.Account"
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.sessionAuthentication",
-    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.SessionAuthentication",
+    ),  # Ensure the comma is present here
 }
+
 
 
 SPECTACULAR_SETTINGS = {
