@@ -1,13 +1,21 @@
-import Home from "./pages/Home"
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./pages/Home";
 
-
-function App() {
-
-  return (
-    <>
-    <Home/>
-    </>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route path="/" element={<Home />} />
+    </Route>
   )
-}
+);
 
-export default App
+const App: React.FC = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default App;
