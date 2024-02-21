@@ -14,10 +14,10 @@ declare module "@mui/material/styles" {
   }
 }
 
-export const createMuiTheme = () => {
+const createMuiTheme = () => {
   let theme = createTheme({
     primaryAppBar: {
-      height: 50,
+      height: 250,
     },
   });
   return theme;

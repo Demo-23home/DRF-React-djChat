@@ -5,8 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import { ThemeProvider } from "styled-components";
-import { createMuiTheme } from "./theme/theme";
+import { ThemeProvider } from "@mui/material";
+import createMuiTheme from "./theme/theme";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
