@@ -17,7 +17,15 @@ declare module "@mui/material/styles" {
 const createMuiTheme = () => {
   let theme = createTheme({
     primaryAppBar: {
-      height: 250,
+      height: 50,
+    },
+    components: {
+      MuiAppBar: {
+        defaultProps: {
+          color: "default",
+          elevation: 0,
+        },
+      },
     },
   });
   return theme;
