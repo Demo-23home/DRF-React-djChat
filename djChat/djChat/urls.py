@@ -26,6 +26,7 @@ from drf_spectacular.views import (
 )
 from rest_framework.routers import DefaultRouter
 from server.views import ServerListViewSet
+from webchat.consumer import WebChatConsumer
 
 router = DefaultRouter()
 router.register("api/server/select", ServerListViewSet)
@@ -47,6 +48,7 @@ urlpatterns = [
 ] + router.urls
 
 
+websocket_urlpatterns = [path("ws/test", WebChatConsumer.as_asgi())]
+
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, 
-                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

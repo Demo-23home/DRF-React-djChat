@@ -10,14 +10,14 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import MenuIcon from "@mui/icons-material/Menu"; // Corrected the import name
+import MenuIcon from "@mui/icons-material/Menu"; 
 import { useEffect, useState } from "react";
 
 const PrimaryAppBar = () => {
   const [sideMenu, setSideMenu] = useState(false);
 
   const toggleDrawer = (open: boolean) => (event: React.MouseEvent) => {
-    setSideMenu(open); // Set the side menu state to the provided value
+    setSideMenu(open);
   };
 
   const theme = useTheme();
@@ -28,7 +28,7 @@ const PrimaryAppBar = () => {
     if (isSmallScreen && sideMenu) {
       setSideMenu(false);
     }
-  },[isSmallScreen]);
+  }, [isSmallScreen]);
 
   return (
     <>
@@ -49,9 +49,9 @@ const PrimaryAppBar = () => {
               aria-label="open drawer"
               edge="start"
               sx={{ mr: 2 }}
-              onClick={toggleDrawer(!sideMenu)} // Invert the sideMenu state
+              onClick={toggleDrawer(!sideMenu)}
             >
-              <MenuIcon /> {/* Corrected the component name */}
+              <MenuIcon /> 
             </IconButton>
           </Box>
 
@@ -68,7 +68,7 @@ const PrimaryAppBar = () => {
               variant="h6"
               noWrap
               component="div"
-              sx={{ fontWeight: 700, letterSpacing: "-0.5px" }} // Corrected the property name
+              sx={{ fontWeight: 700, letterSpacing: "-0.5px" }}
             >
               DJCHAT
             </Typography>
